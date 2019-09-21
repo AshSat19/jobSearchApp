@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,18 +14,15 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 
-import { AppComponent } from './app.component';
-import { MainComponent } from './components/main/main.component';
-import { ListingComponent } from './components/listing/listing.component';
+import { ListingComponent } from './listing.component';
 
-describe('AppComponent', () => {
+describe('ListingComponent', () => {
+  let component: ListingComponent;
+  let fixture: ComponentFixture<ListingComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        MainComponent,
-        ListingComponent
-      ],
+      declarations: [ ListingComponent ],
       imports: [
         MatToolbarModule,
         HttpClientModule,
@@ -43,9 +40,13 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ListingComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should compile', () => {
+    expect(component).toBeTruthy();
   });
 });
