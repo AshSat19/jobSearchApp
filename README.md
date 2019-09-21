@@ -16,6 +16,3 @@ This is a simple job-search application that implements search, sort and filter 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-
-### See a live demo of the application [here](https://ashsat19.github.io/jobSearchApp/),
